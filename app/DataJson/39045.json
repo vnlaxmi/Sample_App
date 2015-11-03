@@ -1,0 +1,95 @@
+[
+
+    {
+
+      "id": "553ff320791d125b42246ba4",
+
+      "appName": "VPP",
+
+      "appDescr": "Virtua Patch Panel",
+
+      "appCategory": "Management",
+
+      "version": {
+
+        "major": "1",
+
+        "minor": "2",
+
+        "patch": "3"
+
+      },
+
+      "appVendor": {
+
+        "vendorName": "Nuviso",
+
+        "vendorUrl": "http://www.nuviso.com",
+
+        "vendorContactEmail": "info@nuviso.com",
+
+        "vendorContactAddress": "123-456-7890",
+
+        "vendorContactNumber": "691 S Milpitas Blvd, Milpitas, CA"
+
+      },
+
+      "productVideoUrl": "http://www.youtube.com/xksudies",
+
+      "productLinks": [
+
+        {
+
+          "name": "userguide",
+
+          "value": "userGuide.pdf"
+
+        }
+
+      ],
+
+      "controllers": [
+
+        {
+
+          "controllerName": "CDL",
+
+          "controllerVersion": "2.1"
+
+        }
+
+      ],
+
+      "openFlowVersions": {
+
+        "openFlowVersions": [
+
+          "1.2",
+
+          "1.3"
+
+        ],
+
+        "openFlowCapabilities": [
+
+          "test"
+
+        ]
+
+      },
+
+      "productImages": [
+
+        {
+
+          "imageName": "main",
+
+          "imageLocation": "test.png"
+
+        }
+
+      ]
+
+    }
+
+]

@@ -1,0 +1,114 @@
+<!doctype html>
+<html class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <title>Nuviso</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css(.) styles/vendor.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css(.tmp) styles/main.css -->
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- endbuild -->
+  </head>
+  <body ng-app="nuvisoInitialApp">
+    <!--[if lt IE 7]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <!-- Add your site or application content here -->
+    <!-- This is the header part of the page -->
+    <nav class="navbar navbar-color">
+      <div class="container-header">
+        <div class="navbar-header col-md-6">
+          <img width="320" height="60" src="images/logosdn.png"></img>
+        </div>
+        <div class="col-md-3">
+          <form class="form-search">
+            <input type="text" class="input-medium search-query" ng-model="clicked" placeholder="search"></span>
+          </form>
+        </div>  
+        <div class="glyphy-icons col-md-3">
+          <div class="col-md-2">
+            <span class="glyphicon glyphicon-search" ng-click="show"></span>
+          </div>
+          <div class="col-md-2"><span class="glyphicon glyphicon-user" ng-click="signin()" ng-controller="modalCtrl"><span class="caret"></span></span>
+            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Action</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Another action</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Something else here</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Separated link</a></li>
+            </ul>
+          </div>
+          <div class="col-md-2"><span class="glyphicon glyphicon-lock"></span></div>
+        </div>
+      </div>
+    </nav>
+
+    <div class="offset-lg"></div>
+    <p></p>
+    <!-- This is the body of the page -->
+   <div class="container-fluid col-md-12">
+    <div class="">
+      <div class="span7" ng-view=""></div>
+    </div>
+   </div>
+
+    <!-- This is the footer part of the page -->
+    <div class="col-sm-12">
+      <div class="footer">
+       <div class="navbar-color">
+        <div class="container-header">
+          <div class="Footer col-sm-4">Footer</div>
+          <div class="ContactInfo col-sm-4">Contact Information</div>
+          <div class="Disclaim col-sm-4">Disclaimer</div>
+        </div>  
+      </div>
+    </div>
+
+
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
+     <script>
+       !function(A,n,g,u,l,a,r){A.GoogleAnalyticsObject=l,A[l]=A[l]||function(){
+       (A[l].q=A[l].q||[]).push(arguments)},A[l].l=+new Date,a=n.createElement(g),
+       r=n.getElementsByTagName(g)[0],a.src=u,r.parentNode.insertBefore(a,r)
+       }(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+       ga('create', 'UA-XXXXX-X');
+       ga('send', 'pageview');
+    </script>
+
+    <!-- build:js(.) scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/angular-aria/angular-aria.js"></script>
+    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+    <script src="bower_components/angular-messages/angular-messages.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="bower_components/angular-touch/angular-touch.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+
+        <!-- build:js({.tmp,app}) scripts/scripts.js -->
+        <script src="scripts/app.js"></script>
+        <script src="scripts/controllers/main.js"></script>
+        <script src="scripts/controllers/about.js"></script>
+        <script src="scripts/controllers/example.js"></script>
+        <script src="scripts/controllers/modalCtrl.js"></script>
+        <!-- endbuild -->
+
+        <!--directives-->
+        <script src="scripts/Directives/mainmodel.js"></script>
+
+</body>
+</html>

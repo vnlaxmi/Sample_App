@@ -1,0 +1,171 @@
+
+<div class="offset"></div>
+<div class="col-sm-2 panel panel-default">
+  <div class="row panel-heading"> 
+    <h3 class="panel-title"><strong> Other Apps in Category </strong></h3>
+  </div>
+   <div class="panel-body">
+      <div><label><input type="checkbox" name="category-1">  Category 1 </label></div>
+      <div><label><input type="checkbox" name="category-2">  Category 2 </label></div>
+      <div><label><input type="checkbox" name="category-3">  Category 3 </label></div>
+      <div><label><input type="checkbox" name="category-4">  Category 4 </label></div>
+      <div><label><input type="checkbox" name="category-5">  Category 5 </label></div>
+    </div>
+  
+  <hr>
+
+  <div class="row panel-heading"> 
+    <h3 class="panel-title"><strong> Ratings </strong></h3>
+  </div>
+  <div class="panel-body">
+      <div><label><input type="checkbox" name="FiveStar">  ***** </label></div>
+      <div><label><input type="checkbox" name="FourStar">  **** </label></div>
+      <div><label><input type="checkbox" name="ThreeStar">  *** </label></div>
+      <div><label><input type="checkbox" name="TwoStar">  ** </label></div>
+      <div><label><input type="checkbox" name="Star">  * </label></div> 
+  </div>
+
+  <hr>
+
+  <div class="row panel-heading"> 
+    <h3 class="panel-title"><strong> Price </strong></h3>
+  </div>
+  <div class="panel-body">
+      <div><label><input type="checkbox" name="Free">  Free </label></div>
+      <div><label><input type="checkbox" name="Monthly">  Monthly </label></div>
+      <div><label><input type="checkbox" name="PayOnce">  Pay Once </label></div>
+  </div>
+</div>
+
+
+
+
+<div class="col-sm-8">
+  <div class="header">
+    <h1><strong> {{appName}} </strong></h1>
+    <h4> {{rating}} </h4>
+    <h3> {{author}} </h3>
+  </div>
+
+
+
+  	<div style="height: 305px">
+    	<carousel interval="myInterval">
+      		<slide ng-repeat="slide in slides" active="slide.active">
+        		<img ng-src="{{slide.image}}" style="margin:auto;">
+        		<div class="carousel-caption">
+          			<h4>Slide {{$index}}</h4>
+          			<p>{{slide.text}}</p>
+        		</div>
+      		</slide>
+    	</carousel>
+  	</div>
+  
+
+  <strong><hr></strong>
+
+  <div class="col-sm-12">
+    <nav class="col-sm-3 pull-left">
+      <ul class="pagination">
+        <li>
+          <a href="#" aria-label="Previous">
+            <span aria-hidden="true">&laquo;</span>
+          </a>
+        </li>
+        <li><a href="#">1</a></li>
+        <li><a href="#">2</a></li>
+        <li><a href="#">3</a></li>
+        <li><a href="#">4</a></li>
+        <li>
+          <a href="#" aria-label="Next">
+            <span aria-hidden="true">&raquo;</span>
+          </a>
+        </li>
+      </ul>
+    </nav> 
+
+    <p class="col-sm-3 pull-right"> Sort by: 
+      <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">Dropdown
+        <span class="caret"></span>
+      </button>
+      <span class="glyphicon glyphicon-th"></span>
+      <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Action</a></li>
+        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Another action</a></li>
+        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Something else here</a></li>
+        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Separated link</a></li>
+      </ul>      
+    </p>
+  </div>
+
+  <div class="col-sm-4">
+    <div class="thumbnail">
+      <img src="images/yeoman.png" alt="...">
+      <div class="caption">
+        <h3>Thumbnail label</h3>
+        <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+        <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-sm-4">
+    <div class="thumbnail">
+      <img src="images/yeoman.png" alt="...">
+      <div class="caption">
+        <h3>Thumbnail label</h3>
+        <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+        <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-sm-4">
+    <div class="thumbnail">
+      <img src="images/yeoman.png" alt="...">
+      <div class="caption">
+        <h3>Thumbnail label</h3>
+        <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+        <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="col-sm-2 panel panel-default">
+  <div class="row panel-heading"> 
+    <h3 class="panel-title"><strong> Additional Resources </strong></h3>
+  </div>
+   <div class="panel-body">
+      <div><label><input type="checkbox" name="category-1">  Category 1 </label></div>
+      <div><label><input type="checkbox" name="category-2">  Category 2 </label></div>
+      <div><label><input type="checkbox" name="category-3">  Category 3 </label></div>
+      <div><label><input type="checkbox" name="category-4">  Category 4 </label></div>
+      <div><label><input type="checkbox" name="category-5">  Category 5 </label></div> 
+    </div>
+  
+  <hr>
+
+  <div class="row panel-heading"> 
+    <h3 class="panel-title"><strong> Ratings </strong></h3>
+  </div>
+  <div class="panel-body">
+      <div><label><input type="checkbox" name="FiveStar">  ***** </label></div>
+      <div><label><input type="checkbox" name="FourStar">  **** </label></div>
+      <div><label><input type="checkbox" name="ThreeStar">  *** </label></div>
+      <div><label><input type="checkbox" name="TwoStar">  ** </label></div>
+      <div><label><input type="checkbox" name="Star">  * </label></div> 
+  </div>
+
+  <hr>
+
+  <div class="row panel-heading"> 
+    <h3 class="panel-title"><strong> Price </strong></h3>
+  </div>
+  <div class="panel-body">
+      <div><label><input type="checkbox" name="Free">  Free </label></div>
+      <div><label><input type="checkbox" name="Monthly">  Monthly </label></div>
+      <div><label><input type="checkbox" name="PayOnce">  Pay Once </label></div>
+  </div>
+</div>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>	
+	<head>
+		
+		
+	</head>
+	<body  ng-app="json_example">
+		<h1>Accuweather.com Data Filter</h1>
+		
+		<div  ng-controller="readJSON"  >
+			<div style="width:70%;float:left;">
+			
+			<h1>Complete JSON Data:</h1>
+			{{jsondata}}
+			
+			</div>
+			<label style="width:30%;float:left;">
+			<input type="radio" value="current" name="options" ng-click="getDate()" id="current_date"/> Get Current Date Data
+			</label>
+			<br />
+			<label style="width:30%;float:left;">
+			<input type="radio" value="current" name="options" ng-click="getCurrentMonthData()" id="current_date"/> Get Current Month Data
+			</label>
+			<br />
+			<label style="width:30%;float:left;">
+			<input type="radio" value="current" name="options" ng-click="getCurrentYear()" id="current_date"/> Get Current Year
+			</label>
+			<br />
+			<label style="width:30%;float:left;">
+			<input type="radio" value="current" name="options" ng-click="getPastData()" id="current_date"/> Get Past Seven Days Data
+			</label>
+			<br />
+			<label style="width:30%;float:left;">
+			<input type="radio" value="current" name="options" ng-click="getPastMonthsData()" id="current_date"/> Get Last Twelve Months Data
+			</label>
+			<br />
+			
+			<script type="text/javascript" src="angular.min.js"></script>
+			<script type="text/javascript" >
+				var nameSpace = angular.module("json_example", []);
+			
+			nameSpace.controller("readJSON", ['$scope','$http', function($scope, $http)
+			        { 
+						
+							$http.get('js/348426.json').success (function(data){
+			                console.log(data);
+			                $scope.jsondata = data;
+							});
+						
+							$scope.getDate = function(){
+								$scope.date = new Date();
+								$scope.day = $scope.date.getDay();
+								$scope.month = $scope.date.getMonth();
+								$scope.year = $scope.date.getFullYear();
+								
+								console.log($scope.day);
+								console.log($scope.month);
+								console.log($scope.year);
+								
+								
+								$http.get('http://api.accuweather.com/climo/v1/actuals/'+$scope.year+'/'+$scope.month+'/'+$scope.day+'/348426?apikey=4011DE4CB07440DBB8497DB447835153').success (function(data){
+									console.log(data);
+									$scope.jsondata = data;
+								});
+							
+							}
+							
+							//get current month data
+							$scope.getCurrentMonthData = function(){
+								$scope.date = new Date();
+								$scope.startday = 1;
+								$scope.currentday = $scope.date.getDay();
+								$scope.month = $scope.date.getMonth()+1;
+								$scope.year = $scope.date.getFullYear();
+								$scope.start= $scope.year+'/'+$scope.month+'/'+$scope.startday;
+								//+2014/01/27&end=2014/02/04
+								$scope.end = $scope.year+'/'+$scope.month+'/'+$scope.currentday;							
+								$http.get('http://api.accuweather.com/climo/v1/records/350540?start='+$scope.start+'&end='+$scope.end+'&apikey=4011DE4CB07440DBB8497DB447835153').success (function(data){
+									console.log(data);
+									$scope.jsondata = data;
+								});
+							
+							}
+							
+							//get current Year
+							$scope.getCurrentYear = function(){
+								$scope.date = new Date();
+								$scope.startday = 1;
+								$scope.startYear = 1;
+								$scope.currentday = $scope.date.getDay();
+								$scope.month = $scope.date.getMonth()+1;
+								$scope.year = $scope.date.getFullYear();
+								$scope.start= $scope.year+'/'+$scope.startYear+'/'+$scope.startday;
+								//+2014/01/27&end=2014/02/04
+								$scope.end = $scope.year+'/'+$scope.month+'/'+$scope.currentday;							
+								$http.get('http://api.accuweather.com/climo/v1/records/350540?start='+$scope.start+'&end='+$scope.end+'&apikey=4011DE4CB07440DBB8497DB447835153').success (function(data){
+									console.log(data);
+									$scope.jsondata = data;
+								});
+							
+							}
+							
+							//get last 7 days
+							$scope.getPastData = function(){
+								$scope.date = new Date();
+								$scope.lastDate = new Date();
+								$scope.lastDate.setDate($scope.date.getDate() - 7); //past 7th day
+								
+								$scope.last_seventhday = $scope.lastDate.getDate();
+								$scope.last_month = $scope.lastDate.getMonth()+1;
+								$scope.last_year = $scope.lastDate.getFullYear();
+								
+								
+								$scope.startday = 1;
+								$scope.startYear = 1;
+								$scope.currentday = $scope.date.getDate();
+								$scope.month = $scope.date.getMonth()+1;
+								$scope.year = $scope.date.getFullYear();
+								
+								$scope.start= $scope.last_year+'/'+$scope.last_month+'/'+$scope.last_seventhday;
+								//+2014/01/27&end=2014/02/04
+								$scope.end = $scope.year+'/'+$scope.month+'/'+$scope.currentday;
+								
+								$http.get('http://api.accuweather.com/climo/v1/records/350540?start='+$scope.start+'&end='+$scope.end+'&apikey=4011DE4CB07440DBB8497DB447835153').success (function(data){
+									console.log(data);
+									$scope.jsondata = data;
+								});
+								
+							}
+							//get last 12 months details
+							$scope.getPastMonthsData = function(){
+								$scope.date = new Date();
+								$scope.lastDate = new Date();
+								$scope.lastDate.setDate($scope.date.getDate() - 365); //past 365th day
+								
+								console.log($scope.lastDate);
+								
+								$scope.last_seventhday = $scope.lastDate.getDate();
+								$scope.last_month = $scope.lastDate.getMonth()+1;
+								$scope.last_year = $scope.lastDate.getFullYear();
+								
+								
+								$scope.startday = 1;
+								$scope.startYear = 1;
+								$scope.currentday = $scope.date.getDate();
+								$scope.month = $scope.date.getMonth()+1;
+								$scope.year = $scope.date.getFullYear();
+								
+								$scope.start= $scope.last_year+'/'+$scope.last_month+'/'+$scope.last_seventhday;
+								//+2014/01/27&end=2014/02/04
+								$scope.end = $scope.year+'/'+$scope.month+'/'+$scope.currentday;
+								
+								$http.get('http://api.accuweather.com/climo/v1/records/350540?start='+$scope.start+'&end='+$scope.end+'&apikey=4011DE4CB07440DBB8497DB447835153').success (function(data){
+									console.log(data);
+									$scope.jsondata = data;
+								});
+								
+							}
+							
+							
+			 
+			        }]);
+					
+			</script>
+			
+		</div>
+		
+	</body>
+</html>
